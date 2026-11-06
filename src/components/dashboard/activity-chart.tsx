@@ -1,0 +1,4 @@
+'use client';
+import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer} from 'recharts';
+const data=[{day:'Mon',workouts:1},{day:'Tue',workouts:0},{day:'Wed',workouts:1},{day:'Thu',workouts:1},{day:'Fri',workouts:0},{day:'Sat',workouts:1},{day:'Sun',workouts:0}];
+export function ActivityChart(){return <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><h2 className="text-lg font-semibold">Weekly activity</h2><p className="mb-6 text-sm text-slate-500">Example data</p><div className="h-64 w-full"><ResponsiveContainer width="100%" height="100%"><BarChart data={data}><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0"/><XAxis dataKey="day"/><YAxis allowDecimals={false}/><Tooltip/><Bar dataKey="workouts" fill="#2563eb" radius={[6,6,0,0]} maxBarSize={40}/></BarChart></ResponsiveContainer></div></section>}
